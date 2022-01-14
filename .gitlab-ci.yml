@@ -43,7 +43,7 @@ test_backend:
 test_frontend: 
     stage: test
     script: 
-        - echo "Testing"
+        - echo "TestFront"
 
 
 RestAPI-Docker:
