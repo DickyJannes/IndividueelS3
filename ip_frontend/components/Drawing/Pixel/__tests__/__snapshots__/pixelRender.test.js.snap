@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders pixel correctly 1`] = `
+<View
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "borderColor": "gray",
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": "1.5rem",
+      "opacity": 0.9,
+      "width": "1.5rem",
+    }
+  }
+/>
+`;

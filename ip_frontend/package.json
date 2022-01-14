@@ -1,0 +1,75 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "test": "jest",
+    "lint": "eslint --fix --ext .js,.jsx ."
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "@microsoft/signalr": "^6.0.0",
+    "@react-native-community/async-storage": "^1.12.1",
+    "@react-navigation/native": "^6.0.4",
+    "@terrylinla/react-native-sketch-canvas": "^0.8.0",
+    "dom": "^0.0.3",
+    "expo": "^42.0.0",
+    "expo-av": "~9.2.3",
+    "expo-status-bar": "~1.0.4",
+    "node-sass": "^6.0.1",
+    "react": "^16.13.1",
+    "react-color": "^2.19.3",
+    "react-component-export-image": "^1.0.6",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-background-timer": "^2.4.1",
+    "react-native-color-palette": "^2.2.0",
+    "react-native-draw-on-screen": "^1.0.15",
+    "react-native-extended-stylesheet": "^0.12.0",
+    "react-native-paper": "^4.11.1",
+    "react-native-safe-area-context": "3.2.0",
+    "react-native-safe-area-view": "^1.1.1",
+    "react-native-screens": "~3.4.0",
+    "react-native-status-bar-height": "^2.6.0",
+    "react-native-web": "^0.13.18",
+    "react-native-webview": "^11.14.0",
+    "react-navigation": "^4.4.4",
+    "react-navigation-drawer": "^2.7.1",
+    "react-navigation-stack": "^2.10.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/eslint-parser": "^7.16.5",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/jest-native": "^4.0.4",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-native": "^8.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.27.1",
+    "jest": "^27.3.1",
+    "jest-environment-jsdom": "^27.3.1",
+    "jest-expo": "^43.0.1",
+    "jest-fetch-mock": "^3.0.3",
+    "react-native-testing-library": "^6.0.0",
+    "react-test-renderer": "^16.13.1"
+  },
+  "private": true,
+  "jest": {
+    "preset": "jest-expo",
+    "testEnvironment": "./routes/config/custom-jest-environment.js",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
+    ],
+    "automock": false
+  }
+}

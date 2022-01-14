@@ -1,0 +1,94 @@
+version: '3'
+
+services:
+  database:
+    networks:
+        - database
+    container_name: PixelDatabase
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      # localhost port : container port
+      - "1433:1433"
+    restart: always
+    volumes:
+      - ./Data/mssql/data:/var/opt/mssql/data
+      - ./Data/mssql/log:/var/opt/mssql/log
+      - ./Data/mssql/secrets:/var/opt/mssql/secrets
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=game123!
+  
+  backend-sockets:
+    networks:
+       - database
+       - backend-sockets
+    container_name: PixelBackendSockets
+    depends_on:
+      - "database"
+    ports:
+      - "5001:5001"
+      - "5000:5000"
+    restart: always
+    build: ./ip_backend_pixelServer/ip_backend_pixelServer
+    volumes:
+      - ./ip_backend_pixelServer:/usr/src/app
+    expose:
+      - 5001
+      - 5000
+
+  backend-api:
+    networks:
+      - database
+      - backend-api
+    container_name: PixelBackendAPI
+    depends_on:
+      - "database"
+    ports:
+      - "5011:5011"
+      - "5010:5010"
+    restart: always
+    build: ./ip_backend_pixelAPI/ip_backend_pixelAPI
+    volumes:
+      - ./ip_backend_pixelAPI:/usr/src/app
+    expose:
+      - 5011
+      - 5010
+
+     
+ # frontend:
+ #   networks:
+ #     - backend-api
+ #     - frontend
+ #   depends_on:
+ #     - "backend-api"
+ #   container_name: PixelFrontend
+ #   restart: always
+ #   build: ./ip_frontend
+ #   environment:
+ #     - NODE_ENV=development
+ #   tty: true
+ #   ports:
+ #     - '19006:19006'
+ #     - '19001:19001'
+ #     - '19002:19002'
+ #   volumes:
+ #     - ./ip_frontend:/opt/ip_frontend/app:delegated
+ #     - ./ip_frontend/package.json:/opt/ip_frontend/package.json
+ #     - ./ip_frontend/package-lock.json:/opt/ip_frontend/package-lock.json
+ #     - notused:/opt/ip_frontend/app/node_modules
+ #   healthcheck:
+ #     disable: true
+
+# volumes:
+#  notused:
+
+networks:
+  backend-sockets:
+    driver: bridge
+  backend-api:
+    driver: bridge
+  frontend:
+    driver: bridge
+  database:
+    driver: bridge
+ 

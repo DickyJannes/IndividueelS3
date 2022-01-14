@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders row correctly 1`] = `
+<View
+  style={
+    Object {
+      "display": "flex",
+      "flex": 1,
+      "flexDirection": "row",
+      "width": "fit-content",
+    }
+  }
+/>
+`;
