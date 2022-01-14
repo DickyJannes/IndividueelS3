@@ -32,4 +32,4 @@ jobs:
           context: .
           file: ./ip_backend_pixelAPI/ip_backend_pixelAPI/Dockerfile
           push: true
-          tags: ${{ secrets.CI_REGISTRY_USER }}/IndividueelS3:latest
+          tags: ${{ secrets.CI_REGISTRY_USER }}/individueels3:latest
