@@ -32,7 +32,7 @@ jobs:
           context: .
           file: ./ip_backend_pixelAPI/ip_backend_pixelAPI/Dockerfile
           push: true
-          tags: ${{ secrets.CI_REGISTRY_USER }}/individueels3api:latest
+          tags: ${{ secrets.CI_REGISTRY_USER }}/individueels3:api
       -
         name: Build and push Websockets
         uses: docker/build-push-action@v2
@@ -40,4 +40,4 @@ jobs:
           context: .
           file: ./ip_backend_pixelServer/ip_backend_pixelServer/Dockerfile
           push: true
-          tags: ${{ secrets.CI_REGISTRY_USER }}/individueels3websockets:latest
+          tags: ${{ secrets.CI_REGISTRY_USER }}/individueels3:websockets
